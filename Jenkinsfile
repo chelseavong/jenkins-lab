@@ -10,7 +10,7 @@ pipeline {
                 sh 'echo "Hello World"'
                 sh '''
                     echo "multi line shell script"
-                    ls -a
+                    ls -lah
                 '''
             }
         }
