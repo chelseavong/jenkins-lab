@@ -24,6 +24,9 @@ pipeline {
         stage("Deploy") {
             steps {
                 echo 'Deploying'
+                retry(3) {
+                    sh './file.sh'
+                }
             }
         }
     }
