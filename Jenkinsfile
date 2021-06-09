@@ -24,8 +24,8 @@ pipeline {
         stage("Deploy") {
             steps {
                 echo 'Deploying'
-                retry(3) {
-                    sh './file.sh'
+                timeout(1) {
+                    sh './health-check.sh'
                 }
             }
         }
