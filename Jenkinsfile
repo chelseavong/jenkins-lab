@@ -30,4 +30,22 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo 'pipeline finished'
+        }
+        success {
+            echo 'woo u did it'
+        }
+        failure {
+            echo 'ALERT ALERT ALERT'
+        }
+        unstable {
+            echo 'hmm.. might wanna take a look at the pipeline'
+        }
+        changed {
+            echo 'some things have changed'
+        }
+    }
 }
