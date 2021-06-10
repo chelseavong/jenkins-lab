@@ -4,6 +4,14 @@ pipeline {
     }
 
     stages {
+        stage('Credentials') {
+            steps {
+                withCredentials([string(credentialsId: 'jenkins-aws-secret-key-id', variable: 'jenkins-aws-secret-key-id'), string(credentialsId: 'jenkins-aws-secret-access-key', variable: 'jenkins-aws-secret-access-key')]) {
+                    echo '${jenkins-aws-secret-key-id}'
+                    echo '${jenkins-aws-secret-access-key}'
+                }
+            }
+        }
         stage('Build') {
             steps {
                 sh 'python --version'
