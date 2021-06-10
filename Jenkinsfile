@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('Credentials') {
             steps {
-                withCredentials([string(credentialsId: 'jenkins-aws-secret-key-id', variable: 'key-id'), string(credentialsId: 'jenkins-aws-secret-access-key', variable: 'access-key')]) {
-                    echo '${key-id}'
-                    echo '${access-key}'
+                withCredentials([string(credentialsId: 'jenkins-aws-secret-key-id', variable: 'keyId'), string(credentialsId: 'jenkins-aws-secret-access-key', variable: 'accessKey')]) {
+                    echo ""'${key-id}'""
+                    echo ""'${access-key}'""
                 }
             }
         }
